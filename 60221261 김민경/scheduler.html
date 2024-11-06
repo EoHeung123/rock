@@ -1,0 +1,162 @@
+<html>
+  <head>
+    <!-- JQuery Load -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Chart -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+    <!-- Toast Calender CSS & JS -->
+    <script src="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.css"
+    />
+
+    <!-- CSS Load -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/scheduler.css" />
+    <script src="js/scheduler.js"></script>
+    <style type="text/css">
+      body {
+        cursor: url("data:image/x-icon;base64,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AFwAAABJAAAANwAAACUAAAAXAAAADAAAAAUAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAQAAAAIAAAADgAAABgAAAAkAAAAMAAAADwAAABHAAAATgAAAFIAAABTAAAATwAAAEkAAAA/AAAAMwAAACcAAAAbAAAAEQAAAAkAAAAEAAAAAgAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAIAAAAFAAAACgAAAA8AAAAWAAAAHQAAACMAAAAoAAAAKwAAACsAAAApAAAAJAAAAB8AAAAYAAAAEQAAAAsAAAAGAAAAAwAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAADAAAABQAAAAcAAAALAAAADgAAABAAAAARAAAAEgAAABEAAAAOAAAADAAAAAgAAAAGAAAAAwAAAAIAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAgAAAAMAAAAEAAAABQAAAAUAAAAFAAAABQAAAAQAAAADAAAAAgAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////////////////////////8A///8AD//+AAP//AAB//gAAf/wAAD/8AAAf+AAAH/gAAB/4AAAf+AAAD/gAAA/4AAAf+AAAH/gAAB/8AAAf/AAAP/4AAD/+AAB//wAA///AAf//4Af///w///////////////////////8="),
+          auto;
+      }
+    </style>
+  </head>
+
+  <body class="body">
+    <!--헤더-->
+    <div class="header">
+      <img
+        src="img/bg_scheduler_header.png"
+        alt="header background"
+        class="header-bg"
+      />
+      <img src="img/icon_backArrow.png" alt="Back icon" class="back-icon" />
+      <div class="header-folder">
+        <img
+          src="img/icon_folder1.png"
+          alt="band folder icon"
+          class="header-folder-icon"
+        />
+        <div class="h3">Band</div>
+      </div>
+      <div class="header-content">
+        <div class="h1">Get some practice in, you band dudes!</div>
+        <div class="header-h2">
+          <div class="line-vertical"></div>
+          <div class="h2">
+            "We could be an awesome ROCK STAR... if only we practiced more."
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--메인화면-->
+    <div class="main-screen">
+      <div class="main-top-section">
+        <div class="main-left-section">
+          <!--Todo-->
+          <div class="todo-section">
+            <div class="h2">To-Do</div>
+            <ul class="todo-list h3">
+              <li><input type="checkbox" /> Pick the next song</li>
+              <li><input type="checkbox" /> performance planning</li>
+              <li><input type="checkbox" /> Poster production</li>
+              <button class="todo-btn">Add New</button>
+            </ul>
+          </div>
+          <!--Events-->
+          <div class="events-section">
+            <div class="h2">Upcoming Events</div>
+            <ul class="events-list h3">
+              <li>• 11/10 meeting</li>
+              <li>• 11/25 Final rehearsal</li>
+              <li>• 11/30 Concert!!</li>
+              <button class="event-btn">Add new</button>
+            </ul>
+          </div>
+          <!--Rank-->
+          <div class="rank-section">
+            <div class="h2">Goody-Goody Rank</div>
+            <ul class="rank-list h3">
+              <li>1. John</li>
+              <li>2. Mike</li>
+              <li>3. Alice</li>
+            </ul>
+          </div>
+        </div>
+        <div class="main-right-section">
+          <!--Calendar-->
+          <div id="calendar"></div>
+
+          <div class="modal" id="addEventModal">
+            <div class="form-item">
+              <!-- 곡 선택 -->
+              <label for="songName">Song Name:</label>
+              <select id="songName">
+                <option value="Song1">slow dancing in a burning room</option>
+                <option value="Song2">Tik Tak Tok</option>
+                <option value="Song3">city 404</option></select
+              ><br />
+            </div>
+
+            <div class="form-item">
+              <!-- 악기 선택 -->
+              <label for="instrument">Instrument:</label>
+              <select id="instrument">
+                <option value="Guitar">Guitar</option>
+                <option value="Drums">Drums</option>
+                <option value="Bass">Bass</option>
+                <option value="Vocals">Vocals</option></select
+              ><br />
+            </div>
+
+            <div class="form-item">
+              <!-- 연주자 선택 -->
+              <label for="performer">Performer:</label>
+              <select id="performer">
+                <option value="John">John</option>
+                <option value="Mike">Mike</option>
+                <option value="Alice">Alice</option>
+                <option value="Jane">Jane</option></select
+              ><br />
+            </div>
+
+            <div class="form-item">
+              <!-- 날짜 선택 -->
+              <label for="Date">Date:</label>
+              <input type="date" id="Date" /><br />
+            </div>
+
+            <div class="form-item">
+              <!-- 연습 시작 시각 -->
+              <label for="startTime">Start Time:</label>
+              <input type="time" id="startTime" />
+              <!-- 연습 종료 시각 -->
+              <label for="startTime">End Time:</label>
+              <input type="time" id="endTime" /><br />
+            </div>
+
+            <button class="save-btn">Save</button>
+          </div>
+        </div>
+      </div>
+      <div class="main-bottom-section">
+        <!--통계-->
+        <div class="data-screen">
+          <!--연습량-->
+          <div id="practiceTimeChart"></div>
+
+          <!--곡 빈도-->
+          <div id="songFrequencyChart"></div>
+        </div>
+        <!--합주 시간 추천-->
+        <div class="rehearsal-recommendation">
+          <div id="recommendedDayTime">Calulating....</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

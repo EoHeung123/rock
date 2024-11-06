@@ -1,0 +1,300 @@
+@font-face {
+  font-family: "Holen";
+  src: url("../font/Holen\ Vintage.otf") format("opentype");
+}
+@font-face {
+  font-family: "Punk";
+  src: url("../font/doctor\ punk.otf") format("opentype");
+}
+@font-face {
+  font-family: "aAnother";
+  src: url("../font/doctor\ aAnotherTag.otf") format("opentype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("../img/bg_vhs.png");
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+.header {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  text-align: left;
+  overflow: hidden;
+}
+
+.back-icon {
+  position: absolute;
+  z-index: 10000;
+  width: 20px;
+  height: 40px;
+  left: 5%;
+  top: 5%;
+}
+
+.header-bg {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  z-index: 1;
+}
+
+.header-folder {
+  position: absolute;
+  top: 20vh;
+  left: 180px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-folder-icon {
+  width: 110px;
+  height: auto;
+}
+
+.header-content {
+  position: relative;
+  top: 40svh;
+  left: 160px;
+  z-index: 3;
+  text-align: left;
+}
+
+.h1 {
+  font-family: "Holen";
+  color: #252525;
+  font-size: 26px;
+}
+
+.h2 {
+  font-family: "Holen";
+  color: #252525;
+  font-size: 18px;
+}
+
+.h3 {
+  font-family: "Holen";
+  color: #252525;
+  font-size: 16px;
+}
+
+.header .h1 {
+  padding-bottom: 20px;
+  text-shadow: 0px 0px 20px #0000004e;
+}
+
+.header-h2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  text-shadow: 0px 0px 20px #0000004e;
+}
+
+.line-vertical {
+  background-color: #252525;
+  height: 28px;
+  width: 5px;
+  margin-right: 10px;
+}
+
+.main-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px 100px;
+  margin: 0 auto;
+}
+
+.main-top-section {
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+}
+
+.main-left-section {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+  padding-right: 20px;
+}
+
+.todo-section,
+.events-section,
+.rank-section {
+  background-color: #ffffff;
+  padding: 20px 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 250px;
+  width: 340px;
+  overflow-y: auto;
+  align-content: center;
+  border: 1px solid #000000;
+  border-radius: 4px;
+}
+
+.todo-section .h2,
+.events-section .h2,
+.rank-section .h2 {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.todo-list li,
+.events-list li,
+.rank-list li {
+  margin-bottom: 10px;
+  font-size: 15px;
+  padding: 5px 0px;
+}
+
+.todo-btn {
+  display: block;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #ffffff;
+  color: #252525;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+  border: 0px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Punk";
+  font-size: 20px;
+  width: 96px;
+  height: 36px;
+}
+
+.event-btn {
+  display: block;
+  padding: 10px;
+  background-color: #ffffff;
+  color: #252525;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+  border: 0px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Punk";
+  font-size: 20px;
+  width: 96px;
+  height: 36px;
+  margin-top: 20px;
+}
+
+.main-right-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+  height: fit-content;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 4px;
+}
+
+#calendar {
+  height: 800px;
+  width: 100%;
+  margin: 0 auto;
+  font-family: "Holen";
+  color: #252525;
+}
+
+.main-bottom-section {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.data-screen {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 4px;
+}
+
+.rehearsal-recommendation {
+  width: 100%;
+  margin: 20px auto;
+  padding: 40px 0px;
+  background-color: #252525;
+  border-radius: 4px;
+  text-align: center;
+}
+
+#recommendedDayTime {
+  font-size: 80px;
+  font-family: "Punk";
+  color: #ffffff;
+  white-space: pre-line;
+  letter-spacing: 2px;
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  min-width: 400px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  z-index: 100000;
+  font-family: "Holen";
+  color: #252525;
+}
+
+.toastui-calendar-weekday .toastui-calendar-grid-selection {
+  background-color: transparent !important;
+  border: transparent 0px !important;
+}
+
+.form-item {
+  padding: 10px;
+  color: #252525;
+}
+
+.save-btn {
+  display: block;
+  padding: 10px;
+  background-color: #ffffff;
+  color: #252525;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+  border: 0px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Punk";
+  font-size: 20px;
+  float: right;
+  width: 96px;
+  height: 36px;
+}
